@@ -1,0 +1,81 @@
+ *{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: black;
+    color: white;
+}
+
+.element{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.app{
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.app input{
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 5px;
+    width: 250px;
+}
+
+.app #add{
+    font-size: 15px;
+    width: 30px;
+    padding: 5px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(8, 185, 8);
+}
+
+.app #remove{
+    font-size: 15px;
+    width: 100px;
+    padding: 5px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    word-break: break-all;
+    background-color: rgb(227, 53, 53);
+    color: white;
+}
+
+#lista{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    font-size: 20px;
+    text-transform: capitalize;
+    flex-wrap: wrap;
+    width: 75%;
+}
+
+li{
+    border: solid 1px white;
+    padding: 5px 10px;
+}
+
+.remove{
+    background-color: rgb(227, 53, 53);
+    margin-left: 20px;
+    font-size: 20px;
+    width: 30px;
+    padding: 3px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 5px;
+    color: white;
+}

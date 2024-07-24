@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marktplace</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script defer src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo"><span class="material-symbols-outlined">
+            storefront
+            </span> Market</a>
+
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <div class="menu-search">
+                <select id="categorias" name="categorias">
+                    <option value="category">Categorias</option>
+                    <option value="frutas">Frutas</option>
+                    <option value="vegetais">Vegetais</option>
+                    <option value="laticinios">Laticínios</option>
+                    <option value="carnes">Carnes</option>
+                    <option value="bebidas">Bebidas</option>
+                    <option value="padaria">Padaria</option>
+                    <option value="congelados">Congelados</option>
+                    <option value="limpeza">Produtos de Limpeza</option>
+                    <option value="higiene">Higiene Pessoal</option>
+                    <option value="mercearia">Mercearia</option>
+                </select>
+            </div>
+        </nav>
+
+        <div class="icons">
+            <div class="menu" id="menu-btn"><span class="material-symbols-outlined">
+                menu
+                </span>
+            </div>
+            <div class="search" id="search-btn"><span class="material-symbols-outlined">
+                search
+                </span>
+            </div>
+            <div class="shoppingcart" id="cart-btn"><span class="material-symbols-outlined">
+                shopping_cart
+                </span>
+            </div>
+            <div class="user" id="login-btn"><span class="material-symbols-outlined">
+                person
+                </span>
+            </div>
+        </div>
+
+        <form class="search-form">
+            <input type="search" id="search-box" placeholder="Pesquise aqui...">
+            <label for="search-box"><span class="material-symbols-outlined">
+                search
+                </span>
+            </label>
+        </form>
+
+        <div class="carrinho">
+            <div class="carrinho-btn">
+                <div class="text-carrinho">
+                    <h1>Meu carrinho</h1>
+                </div>
+                <div class="produtos-carrinhos" id="cart-products">
+                </div>
+                <div class="remove-carrinho">
+                    <button class="DeleteAll">Excluir todos</button>
+                </div>
+            </div>
+            <div id="cart-total"></div>
+            <button class="btn-carrinho" id="finalizar-btn">Finalizar compra</button>
+        </div>
+
+        <div class="login-form">
+            <h3>Login</h3>
+            <input type="text" placeholder="Digite seu usuario" class="box" id="UserID">
+            <input type="password" placeholder="Digite sua senha" class="box" id="PasswordID">
+            
+            <p>Esqueceu sua senha? <a href="#">Clique aqui</a></p>
+            <p>Não tem uma conta?<a href="#">Crie agora</a></p>
+
+            <input onclick="Logar()" type="submit" value="login" class="btn">
+            <p id="respostaLogin"></p>
+        </div>
+
+    </header>
+    <section class="home" id="home">
+        <div class="content">
+            <div class="banner-element">
+                <div class="img">
+                    <img src="./banner.jpg" alt="">
+                </div>
+                <div class="text-banner">
+                    <h1>Os <span>melhores</span> produtos para você</h1>
+                    <p>O melhor supermercado online</p>
+                    <a href="#" class="btn"><p>Compre agora</p></a>
+                </div>   
+            </div>
+        </div>
+    </section>  
+    <section class="catalogo" id="catalogo">
+            <div class="texto-catalogo">
+                <h1>Todos os Produtos</h1>
+            </div>
+            <div class="produtos">
+                <div id="card-produtos">
+                    
+                </div>
+            </div>
+    </section>
+
+    <script src="data.js"></script>
+
+    
+</body>
+</html>

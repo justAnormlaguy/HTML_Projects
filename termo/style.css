@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #6e5c62;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: auto;
+}
+
+.navbar{
+    display: flex;
+    gap: 10rem;
+    margin: 10px;
+}
+
+
+.navbar .element1 span{
+    color: #ffffff93;
+    padding: 2px 2px;
+    border-radius: 7px;
+    border: 2px solid #ffffff93;
+    cursor: pointer;
+}
+
+.navbar .element2 span{
+    color: #ffffff93;
+    padding: 2px 2px;
+    border-radius: 7px;
+    border: 2px solid #ffffff93;
+    cursor: pointer;
+}
+
+.navbar .element1 span:hover{
+    transform: scale(1.1);
+    transition: all .4s linear;
+    background: #ffffff93;
+    color: #fff;
+}
+
+.navbar .element2 span:hover{
+    transform: scale(1.1);
+    transition: all .4s linear;
+    background: #ffffff93;
+    color: #fff;
+}
+
+.navbar .text-element h1{
+    color:  #ffffff93;
+    font-family: "melton", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    letter-spacing: 2px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
+}
+
+.tabela-main1{
+    display: flex;
+    justify-content: center;
+    gap: 0.2rem;
+    margin: 2px;
+}
+
+.tabela .card-tabela1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    background: #615458;
+    transition: all .5s linear;
+    border: 4px solid #594F52;
+}
+
+.tabela-main{
+    display: flex;
+    justify-content: center;
+    gap: 0.2rem;
+    margin: 2px;
+}
+
+.tabela .card-tabela{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    background: #615458;
+    transition: all .5s linear;
+    border: 1px solid #22222211;
+}
+
+.tabela .card-tabela:hover{
+    cursor: pointer;
+}
+
+.tabela #back{
+    background: #615458;
+    color: #fff;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.tabela1 #back{
+    background: #ffffff;
+    color: #fff;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*----------------------------------------------------------------------------------------------------------*/
+
+.teclado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.linha-de-teclas {
+    display: flex;
+}
+
+.tecla {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+
+.teclado {
+    background-color: #6e5c62;
+    color: #fff;
+    font-family: "Madimi One", sans-serif;
+    border-radius: 6px;
+    transition: all .5s linear;
+}
+
+.linha-de-teclas {
+    height: 50px;
+}
+
+.tecla {
+    border-radius: 6px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    background: #4C4347;
+    transition: all .5s linear;
+    border: 1px solid #22222211;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.backspace{
+    border-radius: 6px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    background: #4C4347;
+    transition: all .5s linear;
+    border: 1px solid #22222211;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.enter{
+    border-radius: 6px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    background: #4C4347;
+    transition: all .5s linear;
+    border: 1px solid #22222211;
+    width: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

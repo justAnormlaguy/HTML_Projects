@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style_adm.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <input type="text" id='item' placeholder="Digite um item">
+  <input type="text" id='valor' placeholder="12.00">
+  <input type="text" id='descricao' placeholder="Descrição do item">
+  
+  <button onclick="enviar()">Enviar</button>
+  
+  <a href="index.html">catalogo</a>
+  
+  <div id='lista'>
+    <!-- p
+    p 
+    p -->
+  </div>
+  
+  <script>
+    // admin.js
+    var estruturaDados = [];
+    localStorage.clear();
+    document.addEventListener("DOMContentLoaded", function() {
+      let stringJ = localStorage.getItem('bancoDados');
+      if (stringJ) {
+        estruturaDados = JSON.parse(stringJ);
+        consultarBanco();
+      }
+    });
+  
+    function enviar() {
+      let item = document.getElementById('item').value;
+      let valor = document.getElementById('valor').value;
+      let descricao = document.getElementById('descricao').value;
+      const obj = {
+        id: Date.now(),
+        nome: item,
+        valor: valor,
+        descricao: descricao
+      }
+      estruturaDados.push(obj);
+      // converto para string tipo JSON
+      let stringJ = JSON.stringify(estruturaDados);
+  
+      // memoria
+      localStorage.setItem('bancoDados', stringJ);
+      localStorage.setItem('carrinhoCompra', stringJ);
+      consultarBanco();
+  
+      // send products to data.js
+      const data = JSON.parse(localStorage.getItem('bancoDados'));
+    }
+  
+    function consultarBanco() {
+      let stringJ = localStorage.getItem('bancoDados');
+      let memoria = JSON.parse(stringJ);
+      console.log(memoria);
+      imprimir(memoria);
+    }
+  
+    function imprimir(memoria) {
+      document.getElementById('lista').innerHTML = '';
+      for (let i = 0; i < memoria.length; i++) {
+        let item = memoria[i];
+  
+        let p = document.createElement('p');
+        p.innerHTML = `id: ${item.id} - Nome: ${item.nome} - Valor: ${item.valor} - Descrição: ${item.descricao}`;
+        p.classList.add('classeGabrielle');
+  
+        let deleteButton = document.createElement('button');
+        deleteButton.innerHTML = 'Delete';
+        deleteButton.onclick = function() {
+          deletarItem(item.id);
+        };
+        p.appendChild(deleteButton);
+  
+        let editButton = document.createElement('button');
+        editButton.innerHTML = 'Edit';
+        editButton.onclick = function() {
+          editarItem(item.id, 'Novo nome', 'Novo valor', 'Nova descrição');
+        };
+        p.appendChild(editButton);
+  
+        document.getElementById('lista').appendChild(p);
+      }
+    }
+  
+    function deletarItem(id) {
+      estruturaDados = estruturaDados.filter(item => item.id!== id);
+      let stringJ = JSON.stringify(estruturaDados);
+      localStorage.setItem('bancoDados', stringJ);
+      consultarBanco();
+    }
+  
+    function editarItem(id) {
+  let item = estruturaDados.find(item => item.id === id);
+  if (item) {
+    let novoNome = prompt("Digite o novo nome: ");
+    let novoValor = prompt("Digite o novo valor: ");
+    let novaDescricao = prompt("Digite a nova descrição:");
+    item.nome = novoNome;
+    item.valor = novoValor;
+    item.descricao = novaDescricao;
+    let stringJ = JSON.stringify(estruturaDados);
+    localStorage.setItem('bancoDados', stringJ);
+    consultarBanco();
+  }
+}
+localStorage.clear();
+
+  </script>
+  
+  <script src="script.js"></script>
+</body>
+
+</html>
